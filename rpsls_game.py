@@ -15,8 +15,8 @@ transition_table = [
     [0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0],
 ]
-current_game_turn = None
 previous_game_turn = None
+current_game_turn = None
 human_score = 0
 machine_score = 0
 
@@ -83,27 +83,27 @@ def get_choice(option = None, index = None):
 
 def play(human_option):
     global transition_table
-    global current_game_turn
     global previous_game_turn
+    global current_game_turn
     global human_score
     global machine_score
 
     ban = False
 
-    previous_game_turn = human_option
-    previous_game_turn_index = get_choice(option=previous_game_turn)[0]
+    current_game_turn = human_option
+    current_game_turn_index = get_choice(option=current_game_turn)[0]
 
-    if (current_game_turn == None):
-        current_game_turn = previous_game_turn
+    if (previous_game_turn == None):
+        previous_game_turn = current_game_turn
         ban = True
 
     #Nos devuelve la fila de la matriz que le corresponde
     #a la option anterior
-    current_game_turn_index = get_choice(option=current_game_turn)[0]
+    previous_game_turn_index = get_choice(option=previous_game_turn)[0]
     #Obtenemos el valor mas grande dentro de esa fila
-    max_value = max(transition_table[current_game_turn_index])
+    max_value = max(transition_table[previous_game_turn_index])
     #Si el valor maximo se repite obtenemos un arreglo con las posiciones del valor mas grande
-    index_max_values = get_max_indices(transition_table[current_game_turn_index], max_value)
+    index_max_values = get_max_indices(transition_table[previous_game_turn_index], max_value)
     #Como puede haber varias opciones con la misma probabilidad
     #Se escoje el indice de una al azar 
     machine_choice_index = index_max_values[random.randint(0,len(index_max_values)-1)]
@@ -141,9 +141,9 @@ def play(human_option):
     
     #Guardamos dentro del renglon de option anterior lo elegido por el usuario para tener en cuenta su probabilidad
     if (ban == False):
-        transition_table[current_game_turn_index][previous_game_turn_index] = transition_table[current_game_turn_index][previous_game_turn_index] + 1 
+        transition_table[previous_game_turn_index][current_game_turn_index] = transition_table[previous_game_turn_index][current_game_turn_index] + 1 
 
-    current_game_turn = previous_game_turn
+    previous_game_turn = current_game_turn
 
 
 
