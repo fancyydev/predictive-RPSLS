@@ -21,7 +21,7 @@ I recommend creating a virtual environment to ensure everything works correctly 
 ```bash
 cd .\predictive-RPSLS\
 ```
-- **Step two: ** Create a virtual enviroment using venv that is the default tool for creating virtual environments in Python.
+- **Step two:** Create a virtual enviroment using venv that is the default tool for creating virtual environments in Python.
 ```bash
 python -m venv venv
 ```
