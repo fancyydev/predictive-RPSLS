@@ -1,47 +1,57 @@
 # predictive-RPSLS
 
 ## Description
-This is the game of rock paper siscors spock and lizard that use a transition matrix to predict the users next decision developed using python with tkinter
+This is a Python implementation of the game Rock, Paper, Scissors, Lizard, Spock, enhanced with a transition matrix to predict the user's next decision. The graphical interface is built using the Tkinter library.
 ## Requirements
-I am gonna recommend the versions that i use but if you have other version of python you can try and if dont work use one similiar.
+Here are the recommended versions to use. If you have a different version of Python, feel free to try it. If the program does not work, try using the same version or a similar version.
 - Python 3.12.4
 
 ## Instalation
 ### Download
-- **Option 1:** You can download the code in a zip folder directly from the repository
-- **Option 2:** You can download the code using the git bash running the next code
+- **Option 1:** Download the code as a ZIP file directly from the repository.
+- **Option 2:** Use Git Bash to clone the repository with the following command.
 ```bash
 git clone https://github.com/fancyydev/predictive-RPSLS.git
 ```
 
 ### Virtual enviroment creation
-I recommend creating a virtual environment to ensure everything works correctly and to avoid errors or inconsistencies between libraries and always is a good practique so i am gonna explain how you can do that.
+It is recommended to use a virtual environment to avoid conflicts between library versions and to ensure a smooth execution. How to set it up is explained below:
 
-- **Step one:** Go  inside of the project folder using the terminal.
+- **Step one:** Navigate to the project folder in your terminal:
 ```bash
 cd .\predictive-RPSLS\
 ```
-- **Step two:** Create a virtual enviroment using venv that is the default tool for creating virtual environments in Python.
+- **Step two:** Create a virtual environment using venv, Python's default tool for this purpose:
 ```bash
 python -m venv venv
 ```
-- **Step three:** Activate the enviromen to can download and install the libraries and package of the project.
+- **Step three:** Activate the virtual environment to install the required libraries and packages:
 ```bash
 .\venv\Scripts\activate
 ```
-Other way to see this is:
+Alternatively, navigate manually:
 ```bash
 cd .\venv\
 cd .\Scripts\
 .\activate
+# Go back to the main folder:
+cd..
+cd..
 ```
-
 ## Package instalation
-
+Once the virtual environment is activated and you are in the main folder, install the required packages by running:
+```bash
+pip install -r requirements.txt
+```
 
 ## Running the program
+To run and test the game:
+- Ensure the virtual environment is active.
+- Use the following command (adjust paths as needed for your system):
+
+As I use powershell I need to use & to be able to send parameters to the script, in this case I use the path to the python interpreter in my virtual environment and then the name of the python program.
 ```
-& "C:\Users\David Fregoso\Documents\David\Cursos\RPSLS\predictive-RPSLS\venv\Scripts\python.exe" .\rpsls_game.py
+& "C:\Users\David Fregoso\Documents\David\Programs\RPSLS\predictive-RPSLS\venv\Scripts\python.exe" .\rpsls_game.py
 ```
 
 ## Explanation
