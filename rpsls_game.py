@@ -150,6 +150,7 @@ def play(human_option):
 root = Tk()
 root.geometry("900x600")
 root.configure(bg = "gray")
+root.resizable(False, False)
 root.title("PIEDRA PAPEL O TIJERA")
 
 #declaramos los label que contendran el conteo de ganados
